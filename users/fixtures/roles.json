@@ -1,0 +1,26 @@
+[
+    {
+        "model": "users.rol",
+        "pk": 1,
+        "fields": {
+            "code": "ADMIN",
+            "name": "Administrator"
+        }
+    },
+    {
+        "model": "users.rol",
+        "pk": 2,
+        "fields": {
+            "code": "RECEP",
+            "name": "Recepcionista"
+        }
+    },
+    {
+        "model": "users.rol",
+        "pk": 3,
+        "fields": {
+            "code": "COLAB",
+            "name": "Colaborador"
+        }
+    }
+]
