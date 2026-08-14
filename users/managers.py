@@ -1,9 +1,10 @@
 from django.contrib.auth.base_user import BaseUserManager
-from .models import Role
 
 class UserManager(BaseUserManager):
 
     def create_user(self, email, password=None, **extra_fields):
+        from .models import Role
+        
         if not email:
             raise ValueError("El email es obligatorio")
 

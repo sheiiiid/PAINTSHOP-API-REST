@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from .managers import UserManager
 
 
-class Rol(models.Model):
+class Role(models.Model):
 
     code = models.CharField(
         max_length=30,
@@ -16,8 +16,8 @@ class Rol(models.Model):
     )
 
     class Meta:
-        db_table = "Rol"
-        verbose_name = "Rol"
+        db_table = "Role"
+        verbose_name = "Role"
         verbose_name_plural = "Roles"
 
     def __str__(self):
@@ -46,8 +46,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         max_length=20
     )
 
-    rol = models.ForeignKey(
-        Rol,
+    role = models.ForeignKey(
+        Role,
         on_delete=models.PROTECT
     )
 
