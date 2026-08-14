@@ -7,3 +7,6 @@ learning.md
 
 # DATABASE
 db.sqlite3
+
+#venv
+.venv
