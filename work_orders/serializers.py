@@ -12,7 +12,7 @@ class WorkOrderStatusSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         return WorkOrderStatus.objects.create(**validated_data)
 
-class WorkOrder(serializers.ModelSerializer):
+class WorkOrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkOrder
         fields = '__all__'
