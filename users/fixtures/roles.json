@@ -1,6 +1,6 @@
 [
     {
-        "model": "users.rol",
+        "model": "users.role",
         "pk": 1,
         "fields": {
             "code": "ADMIN",
@@ -8,7 +8,7 @@
         }
     },
     {
-        "model": "users.rol",
+        "model": "users.role",
         "pk": 2,
         "fields": {
             "code": "RECEP",
@@ -16,7 +16,7 @@
         }
     },
     {
-        "model": "users.rol",
+        "model": "users.role",
         "pk": 3,
         "fields": {
             "code": "COLAB",
