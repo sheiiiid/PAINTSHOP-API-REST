@@ -8,4 +8,3 @@ from .serializers import WorkOrderStatusSerializer
 class WorkOrderStatusView(viewsets.ModelViewSet):
     queryset = WorkOrderStatus.objects.all()
     serializer_class = WorkOrderStatusSerializer
-s
