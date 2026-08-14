@@ -1,14 +1,16 @@
 from django.contrib.auth.base_user import BaseUserManager
-
+from .models import Role
 
 class UserManager(BaseUserManager):
 
     def create_user(self, email, password=None, **extra_fields):
-
         if not email:
             raise ValueError("El email es obligatorio")
 
         email = self.normalize_email(email)
+
+        if not extra_fields.get("role"):
+            extra_fields["rol"] = Role.objects.get(code="COLAB")
 
         user = self.model(
             email=email,
