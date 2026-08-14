@@ -11,7 +11,7 @@ class UserManager(BaseUserManager):
         email = self.normalize_email(email)
 
         if not extra_fields.get("role"):
-            extra_fields["rol"] = Role.objects.get(code="COLAB")
+            extra_fields["role"] = Role.objects.get(code="COLAB")
 
         user = self.model(
             email=email,
@@ -25,17 +25,17 @@ class UserManager(BaseUserManager):
 
     def create_superuser(self, email, password=None, **extra_fields):
 
-        from .models import Rol
+        from .models import Role
 
         try:
-            rol_admin = Rol.objects.get(code="ADMIN")
-        except Rol.DoesNotExist:
+            role_admin = Role.objects.get(code="ADMIN")
+        except Role.DoesNotExist:
             raise ValueError(
                 "El rol ADMIN no existe. "
                 "Ejecute primero: python manage.py loaddata roles"
             )
 
-        extra_fields.setdefault("rol", rol_admin)
+        extra_fields.setdefault("role", role_admin)
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
         extra_fields.setdefault("is_active", True)
