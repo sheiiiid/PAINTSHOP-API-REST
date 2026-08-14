@@ -1,0 +1,90 @@
+[
+    {
+        "model": "work_orders.workorderstatus",
+        "pk": 1,
+        "fields": {
+            "code": "RECEIVED",
+            "name": "Recibido"
+        }
+    },
+    {
+        "model": "work_orders.workorderstatus",
+        "pk": 2,
+        "fields": {
+            "code": "INSPECTION",
+            "name": "En Inspección"
+        }
+    },
+    {
+        "model": "work_orders.workorderstatus",
+        "pk": 3,
+        "fields": {
+            "code": "BUDGET",
+            "name": "Presupuesto"
+        }
+    },
+    {
+        "model": "work_orders.workorderstatus",
+        "pk": 4,
+        "fields": {
+            "code": "WAITING_APPROVAL",
+            "name": "Esperando Aprobación"
+        }
+    },
+    {
+        "model": "work_orders.workorderstatus",
+        "pk": 5,
+        "fields": {
+            "code": "APPROVED",
+            "name": "Aprobado"
+        }
+    },
+    {
+        "model": "work_orders.workorderstatus",
+        "pk": 6,
+        "fields": {
+            "code": "IN_PROGRESS",
+            "name": "En Progreso"
+        }
+    },
+    {
+        "model": "work_orders.workorderstatus",
+        "pk": 7,
+        "fields": {
+            "code": "QUALITY_CONTROL",
+            "name": "Control de Calidad"
+        }
+    },
+    {
+        "model": "work_orders.workorderstatus",
+        "pk": 8,
+        "fields": {
+            "code": "READY",
+            "name": "Listo para Entrega"
+        }
+    },
+    {
+        "model": "work_orders.workorderstatus",
+        "pk": 9,
+        "fields": {
+            "code": "DELIVERED",
+            "name": "Entregado"
+        }
+    },
+    {
+        "model": "work_orders.workorderstatus",
+        "pk": 10,
+        "fields": {
+            "code": "REJECTED",
+            "name": "Rechazado"
+        }
+    },
+    {
+        "model": "work_orders.workorderstatus",
+        "pk": 11,
+        "fields": {
+            "code": "CANCELLED",
+            "name": "Cancelado"
+        }
+    }
+]
