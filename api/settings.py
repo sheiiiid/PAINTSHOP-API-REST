@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users',
     'customers',
     'vehicles',
+    'work_orders',
     'rest_framework',
 ]
 
