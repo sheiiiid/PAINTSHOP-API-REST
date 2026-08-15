@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import WorkOrderStatus, WorkOrder
+from .models import WorkOrderStatus, WorkOrder, WorkOrderStatusHistory
 
 
 class WorkOrderStatusSerializer(serializers.ModelSerializer):
@@ -21,3 +21,13 @@ class WorkOrderSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return WorkOrder.objects.create(**validated_data)
+
+class WorkOrderStatusHistorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WorkOrderStatusHistory
+        fields = '__all__'
+
+        read_only_fields = ['id', 'changed_at', 'work_order', 'previous_status', 'new_status', 'user']
+
+    def create(self, validated_data):
+        return WorkOrderStatusHistory.objects.create(**validated_data)

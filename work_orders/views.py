@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import WorkOrderStatus, WorkOrder
-from .serializers import WorkOrderStatusSerializer, WorkOrderSerializer
+from .models import WorkOrderStatus, WorkOrder, WorkOrderStatusHistory
+from .serializers import WorkOrderStatusSerializer, WorkOrderSerializer, WorkOrderStatusHistorySerializer
 
 # Create your views here.
 
@@ -18,3 +18,13 @@ class WorkOrderView(viewsets.ModelViewSet):
     )
 
     serializer_class = WorkOrderSerializer
+
+class WorkOrderStatusHistoryView(viewsets.ModelViewSet):
+    queryset = WorkOrderStatusHistory.objects.select_related(
+        'work_order',
+        'previous_status',
+        'new_status',
+        'user',
+    )
+
+    serializer_class = WorkOrderStatusHistorySerializer
