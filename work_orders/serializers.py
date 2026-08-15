@@ -22,6 +22,7 @@ class WorkOrderSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         return WorkOrder.objects.create(**validated_data)
 
+
 class WorkOrderStatusHistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkOrderStatusHistory
@@ -31,3 +32,5 @@ class WorkOrderStatusHistorySerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return WorkOrderStatusHistory.objects.create(**validated_data)
+
+

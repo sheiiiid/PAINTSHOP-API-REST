@@ -38,7 +38,7 @@ class WorkOrderStatusHistory (models.Model):
     previous_status = models.ForeignKey('work_orders.WorkOrderStatus', on_delete=models.PROTECT, related_name='previous_status_history')
     new_status = models.ForeignKey('work_orders.WorkOrderStatus', on_delete=models.PROTECT, related_name='new_status_history')
     user = models.ForeignKey('users.User', on_delete=models.PROTECT, related_name='work_order_status_history')
-    comment = models.CharField(max_length=300)
+    comment = models.CharField(max_length=300, null=True, blank=True)
     changed_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
