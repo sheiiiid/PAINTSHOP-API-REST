@@ -17,4 +17,7 @@ class WorkOrderSerializer(serializers.ModelSerializer):
         model = WorkOrder
         fields = '__all__'
 
-        read_only_fields = ['id', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'created_at', 'updated_at', 'closed_at']
+
+    def create(self, validated_data):
+        return WorkOrder.objects.create(**validated_data)
