@@ -32,3 +32,19 @@ class WorkOrder (models.Model):
         verbose_name = 'Work_Order'
         verbose_name_plural = 'Work_Orders'
         db_table = 'WorkOrder'
+
+class WorkOrderStatusHistory (models.Model):
+    work_order = models.ForeignKey('work_orders.WorkOrder', on_delete=models.PROTECT, related_name='work_order_status_history')
+    previous_status = models.ForeignKey('work_orders.WorkOrderStatus', on_delete=models.PROTECT, related_name='previous_status_history')
+    new_status = models.ForeignKey('work_orders.WorkOrderStatus', on_delete=models.PROTECT, related_name='new_status_history')
+    user = models.ForeignKey('users.User', on_delete=models.PROTECT, related_name='work_order_status_history')
+    comment = models.CharField(max_length=300, null=True, blank=True)
+    changed_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Work_Order_Status_History'
+        verbose_name_plural = 'Work_Order_Status_History'
+        db_table = 'WorkOrderStatusHistory'
+
+    def __str__(self):
+        return self.work_order
